@@ -1,5 +1,6 @@
-#include <sys/ptrace.h>
+#include <stdio.h>
 #include <stdbool.h>
+#include <sys/ptrace.h>
 
 bool is_debugger_attached(){
   return (ptrace(PTRACE_TRACEME, 0, 1, 0) == -1);
